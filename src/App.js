@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Box from "3box";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { SPACE_NAME } from "./Constants";
+import { SPACE_NAME, moderator } from "./Constants";
 import AddApp from "./pages/AddApp";
 import Home from "./pages/Home";
 
@@ -43,7 +43,6 @@ export default class App extends Component {
     // Sync 3Box
     await box.syncDone
     console.log("3Box synced");
-    const moderator = "0xa8836881DCACE8bF1DaAC141A3dAbD9A4884dBFB";
     const thread = await space.joinThread("apps_list", {
       firstModerator: moderator,
       members: false
